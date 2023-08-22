@@ -11,5 +11,5 @@ jobs:
         - name: sync
           run: |
             git fetch --all
-            git diff --binary main test_branch > ./patch.patch
+            git diff --binary origin/main origin/test_branch > ./patch.patch
             git apply ./patch.patch
