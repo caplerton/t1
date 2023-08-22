@@ -14,3 +14,6 @@ jobs:
             git fetch --all
             git diff --binary origin/main origin/test_branch > ./patch.patch
             git apply ./patch.patch
+            git add -A
+            git commit -m "update template"
+            git push --set-upstream origin main
