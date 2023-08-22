@@ -6,8 +6,11 @@ jobs:
     repo-sync:
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout
+          uses: actions/checkout@v3
         - name: sync
           run: |
+            git checkout -b main
             git fetch --all
             git diff --binary origin/main origin/test_branch > ./patch.patch
             git apply ./patch.patch
